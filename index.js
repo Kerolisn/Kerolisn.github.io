@@ -2,51 +2,61 @@ const possibleSolutions = [
     {
         Solution: {"Participants": "online", "Platform": "interactio", "Onsite": "listener+app", "Online": "interactio", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
+        InteractioTrainingTypeNeeded: "Interactio Full",
         Output: "Interactio Full Solution"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": ["interactio", "zoom", "teams", "other"], "Onsite": ["listener+app", "hardware", "unknown"], "Online": ["interactio", "zoom", "teams", "listener+app"], "Interpreters": "onsite"},
-        OnsiteSupportIncluded: false,
+        OnsiteSupportIncluded: true,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Combine C2"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": ["interactio", "zoom", "teams", "other"], "Onsite": ["listener+app", "hardware", "unknown"], "Online": ["interactio", "zoom", "teams", "listener+app"], "Interpreters": "online+onsite"},
-        OnsiteSupportIncluded: false,
+        OnsiteSupportIncluded: true,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Combine C3"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": ["interactio", "zoom", "teams", "other"], "Onsite": ["listener+app", "hardware", "unknown"], "Online": ["interactio", "zoom", "teams", "listener+app"], "Interpreters": "onsite+hub"},
-        OnsiteSupportIncluded: false,
+        OnsiteSupportIncluded: true,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Combine C4"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": ["interactio", "zoom", "teams", "other"], "Onsite": ["listener+app", "hardware", "unknown"], "Online": ["interactio", "zoom", "teams", "listener+app"], "Interpreters": "online+onsite+hub"},
-        OnsiteSupportIncluded: false,
+        OnsiteSupportIncluded: true,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Combine C5"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": "zoom", "Onsite": "listener+app", "Online": "zoom", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Restream: Zoom+"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": "other", "Onsite": "listener+app", "Online": "zoom", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Restream"
     },
     {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": "teams", "Onsite": "listener+app", "Online": "teams", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Restream: Teams+"
     },
     {
         Solution: {"Participants": "onsite", "Platform": "interactio", "Onsite": "listener+app", "Online": "interactio", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Onsite"
     },
     {
         Solution: {"Participants": "hybrid", "Platform": "interactio", "Onsite": "listener+app", "Online": "interactio", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
+        InteractioTrainingTypeNeeded: "Interactio Master",
         Output: "Onsite"
     }
 ];
@@ -105,6 +115,7 @@ function DisplayAnswer() {
 
     const meetingTypeHTMLElement = document.getElementById("answer");
     const onsiteSupportHTMLelement = document.getElementById("onsite+support");
+    const trainingTypeHTMLelement = document.getElementById("training+type");
 
     const expectedNumverOfRightAnswers = 5;
 
@@ -146,7 +157,8 @@ function DisplayAnswer() {
         if(matchingAnswers.length === expectedNumverOfRightAnswers) {
 
             meetingTypeHTMLElement.textContent = currentSolution.Output;
-            onsiteSupportHTMLelement.textContent = currentSolution.OnsiteSupportIncluded;
+            (currentSolution.OnsiteSupportIncluded) ? onsiteSupportHTMLelement.textContent = "Onsite support is included in this solution package" : onsiteSupportHTMLelement.textContent = "Onsite support is not included in this solution package";
+            trainingTypeHTMLelement.textContent = currentSolution.InteractioTrainingTypeNeeded;
             return;
 
         };
