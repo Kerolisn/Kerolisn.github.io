@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-
+    select {
+        width: 400px;
+    }
 </style>
 <html>
 <body>
@@ -19,7 +21,7 @@
     </select>
 
     <h4>Main Meeting Platform:</h4>
-    <select name="platform" id="platform" onchange="reCalc(name)">  
+    <select name="platform" id="platform" onchange="ValidateUserInput(name)">  
         <option value="" disabled selected hidden>-</option>
         <option value="interactio">Interactio</option>
         <option value="zoom">Zoom</option>
