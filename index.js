@@ -117,7 +117,7 @@ function DisplayAnswer() {
     const onsiteSupportHTMLelement = document.getElementById("onsite+support");
     const trainingTypeHTMLelement = document.getElementById("training+type");
 
-    const expectedNumverOfRightAnswers = 5;
+    const expectedNumberOfRightAnswers = 5;
 
     for (let index = 0; index < possibleSolutions.length; index++) {
 
@@ -154,7 +154,7 @@ function DisplayAnswer() {
             }
         }
 
-        if(matchingAnswers.length === expectedNumverOfRightAnswers) {
+        if(matchingAnswers.length === expectedNumberOfRightAnswers) {
 
             meetingTypeHTMLElement.textContent = currentSolution.Output;
             (currentSolution.OnsiteSupportIncluded) ? onsiteSupportHTMLelement.textContent = "Onsite support is included in this solution package" : onsiteSupportHTMLelement.textContent = "Onsite support is not included in this solution package";
