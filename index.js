@@ -97,9 +97,9 @@ function ValidateUserInput(nameOfSelector) {
 
 function UserInputIsCompleted() {
 
-    for(let key in userSelection) {
+    for(let property in userSelection) {
 
-        if(userSelection[key] === null) {
+        if(userSelection[property] === null) {
 
             return false;
 
