@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="index.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+
+</style>
+<html>
+<body>
+<div class="container">
+    <h4>Meeting Participants are:</h4>
+        <select name="participants" id="participants" onchange="ValidateUserInput(name)">  
+        <option value="" disabled selected hidden>-</option>
+        <option value="online">Online</option>
+        <option value="onsite">Onsite</option>
+        <option value="hybrid">Online & Onsite</option>
+    </select>
+
+    <h4>Main Meeting Platform:</h4>
+    <select name="platform" id="platform" onchange="reCalc(name)">  
+        <option value="" disabled selected hidden>-</option>
+        <option value="interactio">Interactio</option>
+        <option value="zoom">Zoom</option>
+        <option value="teams">MS Teams</option>
+        <option value="other">Other</option>
+    </select>
+
+    <h4>How onsite speaker/attendee listen to Interpretation:</h4>
+    <select name="onsite" id="onsite" onchange="ValidateUserInput(name)">  
+        <option value="" disabled selected hidden>-</option>
+        <option value="listener+app">Interactio Listener App</option>
+        <option value="hardware">Interactio Listener App and/or hardware</option>
+        <option value="unknown">Unknown</option>
+    </select>
+
+    <h4>How online participants/viewers listen to Interpretation:</h4>
+    <select name="online" id="online" onchange="ValidateUserInput(name)">  
+        <option value="" disabled selected hidden>-</option>
+        <option value="interactio">Interactio Participant Console</option>
+        <option value="zoom">Zoom Language Selection Tool</option>
+        <option value="teams">MS Teams Language Selection Tool</option>
+        <option value="listener+app">Interactio Listener App</option>
+        <option value="unknown">Unknown</option>
+    </select>
+
+    <h4>Interpreters are:</h4>
+    <select name="interpreters" id="interpreters" onchange="ValidateUserInput(name)"> 
+        <option value="" disabled selected hidden>-</option>
+        <option value="online">Online</option>
+        <option value="onsite">Onsite / Interpretation Hub</option>
+        <option value="online+onsite">Online + Onsite / Interpretation Hub</option>
+        <option value="onsite+hub">Onsite + Interpretation Hub</option>
+        <option value="online+onsite+hub">Online + Onsite + Interpretation Hub</option>
+        <option value="other">Other</option>
+        <option value="unknown">Uknown</option>
+    </select>
+
+    <br><br>
+
+    <h4>Meeting Type:</h4>
+    <p id="answer">All fields should be selected</p>
+    <h4>Onsite Support:</h4>
+    <p id="onsite+support">All fields should be selected</p>
+</div>
+</body>
+</html>
