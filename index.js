@@ -57,7 +57,7 @@ const possibleSolutions = [
         Solution: {"Participants": "hybrid", "Platform": "interactio", "Onsite": "listener+app", "Online": "interactio", "Interpreters": "online"},
         OnsiteSupportIncluded: false,
         InteractioTrainingTypeNeeded: "Interactio Master",
-        Output: "Onsite"
+        Output: "Hybrid"
     }
 ];
 
