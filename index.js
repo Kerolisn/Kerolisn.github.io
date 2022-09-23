@@ -6,6 +6,12 @@ const possibleSolutions = [
         Output: "Interactio Full Solution"
     },
     {
+        Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": ["interactio", "zoom", "teams", "other"], "Onsite": ["listener+app", "hardware", "unknown"], "Online": ["interactio", "zoom", "teams", "listener+app"], "Interpreters": "online"},
+        OnsiteSupportIncluded: true,
+        InteractioTrainingTypeNeeded: "Interactio Master",
+        Output: "Combine C1"
+    },
+    {
         Solution: {"Participants": ["online", "onsite", "hybrid"], "Platform": ["interactio", "zoom", "teams", "other"], "Onsite": ["listener+app", "hardware", "unknown"], "Online": ["interactio", "zoom", "teams", "listener+app"], "Interpreters": "onsite"},
         OnsiteSupportIncluded: true,
         InteractioTrainingTypeNeeded: "Interactio Master",
